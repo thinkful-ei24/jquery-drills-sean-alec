@@ -24,11 +24,14 @@ function handleShoppingCart() {
     });
 
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-        console.log('event ran');
-        let item = $(this).closest(".shopping-item");
-        console.log(item);
-        item.addClass("shopping-item__checked");
+        let item = $(this).closest("li").find(".shopping-item");
+        item.toggleClass("shopping-item__checked");
      });
+
+    $('.shopping-list').on('click', '.shopping-item-delete', function (event) {
+        let item = $(this).closest("li");
+        item.remove();
+    });
 
 }
 
