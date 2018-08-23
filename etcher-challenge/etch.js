@@ -7,8 +7,12 @@ $(() => {
 
     //Bind your event listeners here:
     $('.grid').on('mouseover', '.cell', function(event) {
-        $(this).toggleClass('active');
+        $(this).addClass('active');
     }); 
+
+    $('button').on('click', function(event){
+        $('.grid .cell').removeClass('active');
+    });
 });
 
 
