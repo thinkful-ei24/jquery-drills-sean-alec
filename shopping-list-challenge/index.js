@@ -23,14 +23,13 @@ function handleShoppingCart() {
         shoppingList.append(generateItemHtml(itemName));
     });
 
-     $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
         console.log('event ran');
-        let item = $().parent().find('.shopping-item');
+        let item = $(this).closest(".shopping-item");
         console.log(item);
-        item.addClass('shopping-item__checked');
+        item.addClass("shopping-item__checked");
      });
 
-    // console.log($("shopping-item-toggle").parent().find('.shopping-item'));
 }
 
 $(handleShoppingCart);
